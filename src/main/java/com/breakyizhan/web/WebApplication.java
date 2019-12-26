@@ -1,6 +1,8 @@
 package com.breakyizhan.web;
 
 import com.breakyizhan.web.Controller.HelloController;
+import org.apache.catalina.loader.WebappClassLoader;
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -18,7 +20,12 @@ public class WebApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(WebApplication.class, args);
+       // SpringApplication.run(WebApplication.class, args);
+        SpringApplication app = new SpringApplication(WebApplication.class);
+       // app.setBannerMode(Banner.Mode.OFF);
+        app.run(args);
+
+
     }
 
 /*
