@@ -11,20 +11,15 @@ package com.breakyizhan.web.Controller;
 
 import com.breakyizhan.web.model.User;
 import com.breakyizhan.web.service.TestInterFace;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.deploy.net.HttpResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+
+
 
 /**
  * 〈一句话功能简述〉<br>
@@ -37,6 +32,13 @@ import java.io.IOException;
 @Controller
 @RequestMapping("test")
 public class TestBootController {
+    /**
+     * 要求：
+     * - 日志按天记录，自动生成当天的记录文件
+     * - 日志分级存储（info,error）
+     * */
+    //增加日志
+    private final Logger log = LoggerFactory.getLogger(TestBootController.class);
 
     @Autowired
     private TestInterFace testInterFace;
@@ -52,15 +54,11 @@ public class TestBootController {
     @RequestMapping("/get")
     @ResponseBody
     User getUser() {
+        //打印日志
+        log.info("TestBootController getUser info");
         return testInterFace.testaUser();
     }
 
-/*
-    @ComponentScan(basePackages = {"com.breakyizhan.web.service"})//添加的注解 解決自动注入问题
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(TestBootController.class, args);
-    }
-*/
 
 
 }
