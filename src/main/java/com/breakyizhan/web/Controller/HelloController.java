@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Configuration  //相当于xml文件的beans配置, 方法可以@bean
 public class HelloController {
     public HelloController() {
-        System.out.println("TestConfiguration容器启动初始化。。。");
+        System.out.println("Hellocontroller.java文件容器启动初始化。。。");
     }
 
     //dev
