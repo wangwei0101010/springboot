@@ -9,7 +9,7 @@
  */
 package com.breakyizhan.web.Controller;
 
-import com.breakyizhan.web.model.User;
+import com.breakyizhan.web.model.UserInfo;
 import com.breakyizhan.web.service.TestInterFace;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -53,10 +53,10 @@ public class TestBootController {
 
     @RequestMapping("/get")
     @ResponseBody
-    User getUser() {
+    UserInfo getUser() {
         //打印日志
         log.info("TestBootController getUser info");
-        return testInterFace.testaUser();
+        return testInterFace.testUser();
     }
 
 

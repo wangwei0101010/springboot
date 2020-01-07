@@ -34,12 +34,18 @@
             <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
 
-       <!-- <dependency>
+        <!--整合mybaties-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <!--整合mysql-->
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
+            <version>5.1.21</version>
         </dependency>
-        -->
 
         <!-- springBoot test类 -->
         <dependency>

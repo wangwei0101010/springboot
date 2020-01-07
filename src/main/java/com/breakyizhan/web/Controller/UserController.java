@@ -9,7 +9,7 @@
  */
 package com.breakyizhan.web.Controller;
 
-import com.breakyizhan.web.model.User;
+import com.breakyizhan.web.model.UserInfo;
 import com.breakyizhan.web.service.TestInterFace;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,10 +30,17 @@ public class UserController {
     @Autowired
     private TestInterFace testInterFace;
 
-    @RequestMapping("get")
+    @RequestMapping("/get")
     @ResponseBody
-    User getUser() {
-        return testInterFace.testaUser();
+    UserInfo getUser() {
+        return testInterFace.testUser();
+    }
+
+    //增加新的对外访问接口
+    @RequestMapping("/add")
+    @ResponseBody String add() {
+        testInterFace.insertUser("username123寇鑫","password123寇鑫");
+        return "插入成功";
     }
 
 }

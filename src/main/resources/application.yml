@@ -1,0 +1,7 @@
+spring:
+   datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://119.90.51.183:3306/gcx_dd
+      ##url: jdbc:mysql://119.90.51.176:3306/gcx_dd?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: isoftadmin

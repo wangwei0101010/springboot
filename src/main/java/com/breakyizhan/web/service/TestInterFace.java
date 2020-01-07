@@ -9,7 +9,8 @@
  */
 package com.breakyizhan.web.service;
 
-import com.breakyizhan.web.model.User;
+
+import com.breakyizhan.web.model.UserInfo;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -23,5 +24,7 @@ public interface TestInterFace {
 
     public int testInterFace();
 
-    public User testaUser();
+    public UserInfo testUser();
+
+    public int insertUser(String username,String password);//新增的接口
 }

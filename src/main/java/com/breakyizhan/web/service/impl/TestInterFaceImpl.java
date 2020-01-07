@@ -9,9 +9,10 @@
  */
 package com.breakyizhan.web.service.impl;
 
-import com.breakyizhan.web.dao.IUserDao;
-import com.breakyizhan.web.model.User;
+import com.breakyizhan.web.dao.UserDao;
+import com.breakyizhan.web.model.UserInfo;
 import com.breakyizhan.web.service.TestInterFace;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -27,16 +28,20 @@ import javax.annotation.Resource;
 @Service
 public class TestInterFaceImpl  implements TestInterFace {
 
-    @Override
-    public int testInterFace() {
+    //引入dao层接口
+    @Autowired UserDao userDao;
+    @Override public int testInterFace() {
         return 0;
     }
 
-    @Override
-    public User testaUser() {
-        return new User();
+    @Override public UserInfo testUser() {
+        return new UserInfo();
     }
 
+    //新增的接口实现
+    @Override public int insertUser(String username,String password) {
+        return userDao.insert(username,password);
+    }
 
 
 }
