@@ -26,11 +26,22 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--
+                查询后发现默认日志如果要打印生成文件需要添加application.properties，
+                而添加这个只可以打固定名称格式的日志，并不能灵活的配置，所以添加Springboot默认支持的logback作为标准日志输出-->
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+
+       <!-- <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
+        -->
+
+        <!-- springBoot test类 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
