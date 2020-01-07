@@ -1,13 +1,15 @@
 /**
- * FileName: IUserService
+ * FileName: IuserDao
  * Author:   Administrator
- * Date:     2020/1/6 15:24
+ * Date:     2020/1/6 15:22
  * Description:
  * History:
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.breakyizhan.web.service;
+package com.breakyizhan.web.dao;
+
+import com.breakyizhan.web.model.User;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -17,6 +19,6 @@ package com.breakyizhan.web.service;
  * @create 2020/1/6
  * @since 1.0.0
  */
-public class IUserService {
-
+public interface  IUserDao {
+    User selectUser(long id);
 }
