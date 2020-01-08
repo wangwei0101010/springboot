@@ -47,6 +47,19 @@
             <version>5.1.21</version>
         </dependency>
 
+        <!--分页插件-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>4.2.1</version>
+        </dependency>
+        <!--通用Mapper-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>3.3.9</version>
+        </dependency>
+
         <!-- springBoot test类 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
