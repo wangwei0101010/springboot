@@ -16,6 +16,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * 〈一句话功能简述〉<br> 
  * 〈〉
@@ -42,5 +44,6 @@ public class UserController {
         testInterFace.insertUser("username123寇鑫","password123寇鑫");
         return "插入成功";
     }
+
 
 }

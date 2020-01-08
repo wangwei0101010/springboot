@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -30,7 +31,9 @@ public class TestInterFaceImpl  implements TestInterFace {
 
     //引入dao层接口
     @Autowired UserDao userDao;
-    @Override public int testInterFace() {
+
+    @Override
+    public int testInterFace() {
         return 0;
     }
 
@@ -42,6 +45,7 @@ public class TestInterFaceImpl  implements TestInterFace {
     @Override public int insertUser(String username,String password) {
         return userDao.insert(username,password);
     }
+
 
 
 }

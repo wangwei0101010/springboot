@@ -31,4 +31,6 @@ public interface  UserDao {
     @Insert("INSERT INTO userinfo(username, password) VALUES(#{username}, #{password})")
     int insert(@Param("username") String name, @Param("password") String password);
 
+
+
 }

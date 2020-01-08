@@ -27,4 +27,5 @@ public interface TestInterFace {
     public UserInfo testUser();
 
     public int insertUser(String username,String password);//新增的接口
+
 }
