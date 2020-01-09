@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.breakyizhan.web.dao.GcxAllCorpNegativeCfMapper">
+	<resultMap id="BaseResultMap" type="com.breakyizhan.web.model.GcxAllCorpNegativeCf">
+		<id column="PUNISH_MAN" property="punishMan" jdbcType="VARCHAR" />
+		<result column="AUTHORMAN" property="authorman" jdbcType="VARCHAR" />
+		<result column="PROVINCE" property="province" jdbcType="VARCHAR" />
+		<result column="TEL" property="tel" jdbcType="VARCHAR" />
+		<result column="EMAIL" property="email" jdbcType="VARCHAR" />
+		<result column="ADRESS" property="adress" jdbcType="VARCHAR" />
+		<result column="ADD_TIME" property="addTime" jdbcType="VARCHAR" />
+		<result column="GCX_JIAOTONG_CF" property="gcxJiaotongCf" jdbcType="INTEGER" />
+		<result column="GCX_SWJ_CF" property="gcxSwjCf" jdbcType="INTEGER" />
+		<result column="GCX_GAJ_CF" property="gcxGajCf" jdbcType="INTEGER" />
+		<result column="GCX_HBJ_CF" property="gcxHbjCf" jdbcType="INTEGER" />
+		<result column="GCX_JHSY_CF" property="gcxJhsyCf" jdbcType="INTEGER" />
+		<result column="GCX_NYJ_CF" property="gcxNyjCf" jdbcType="INTEGER" />
+		<result column="GCX_LYJ_CF" property="gcxLyjCf" jdbcType="INTEGER" />
+		<result column="GCX_LINYEJU_CF" property="gcxLinyejuCf" jdbcType="INTEGER" />
+		<result column="GCX_GSXZGLJ_CF" property="gcxGsxzgljCf" jdbcType="INTEGER" />
+		<result column="GCX_SJJ_CF" property="gcxSjjCf" jdbcType="INTEGER" />
+		<result column="GCX_GTZYJ_CF" property="gcxGtzyjCf" jdbcType="INTEGER" />
+		<result column="GCX_ZLJDJ_CF" property="gcxZljdjCf" jdbcType="INTEGER" />
+		<result column="GCX_SCJDGLJ_CF" property="gcxScjdgljCf" jdbcType="INTEGER" />
+		<result column="GCX_SPYP_CF" property="gcxSpypCf" jdbcType="INTEGER" />
+		<result column="GCX_CZJ_CF" property="gcxCzjCf" jdbcType="INTEGER" />
+		<result column="GCX_DSJ_CF" property="gcxDsjCf" jdbcType="INTEGER" />
+		<result column="GCX_WJJ_CF" property="gcxWjjCf" jdbcType="INTEGER" />
+		<result column="GCX_ZFCXJSJ_CF" property="gcxZfcxjsjCf" jdbcType="INTEGER" />
+		<result column="GCX_RLZYSHBZJ_CF" property="gcxRlzyshbzjCf" jdbcType="INTEGER" />
+		<result column="GCX_WHJ_CF" property="gcxWhjCf" jdbcType="INTEGER" />
+		<result column="GCX_SCXZZF_CF" property="gcxScxzzfCf" jdbcType="INTEGER" />
+		<result column="GCX_CBJ_CF" property="gcxCbjCf" jdbcType="INTEGER" />
+		<result column="GCX_TYJ_CF" property="gcxTyjCf" jdbcType="INTEGER" />
+		<result column="GCX_GDJ_CF" property="gcxGdjCf" jdbcType="INTEGER" />
+		<result column="GCX_DSJCF_CF" property="gcxDsjcfCf" jdbcType="INTEGER" />
+		<result column="GCX_YCZMJ_CF" property="gcxYczmjCf" jdbcType="INTEGER" />
+		<result column="GCX_XMJ_CF" property="gcxXmjCf" jdbcType="INTEGER" />
+		<result column="GCX_BJJ_CF" property="gcxBjjCf" jdbcType="INTEGER" />
+		<result column="GCX_HG_CF" property="gcxHgCf" jdbcType="INTEGER" />
+		<result column="GCX_CG_CF" property="gcxCgCf" jdbcType="INTEGER" />
+		<result column="GCX_MFJ_CF" property="gcxMfjCf" jdbcType="INTEGER" />
+		<result column="GCX_QXJ_CF" property="gcxQxjCf" jdbcType="INTEGER" />
+		<result column="GCX_AJJ_CF" property="gcxAjjCf" jdbcType="INTEGER" />
+		<result column="GCX_MZJ_CF" property="gcxMzjCf" jdbcType="INTEGER" />
+		<result column="GCX_SCJ_CF" property="gcxScjCf" jdbcType="INTEGER" />
+		<result column="GCX_SW_CF" property="gcxSwCf" jdbcType="INTEGER" />
+		<result column="GCX_YWJ_CF" property="gcxYwjCf" jdbcType="INTEGER" />
+		<result column="GCX_HSJ_CF" property="gcxHsjCf" jdbcType="INTEGER" />
+		<result column="GCX_JLZMGLJ_CF" property="gcxJlzmgljCf" jdbcType="INTEGER" />
+		<result column="GCX_YZGL_CF" property="gcxYzglCf" jdbcType="INTEGER" />
+		<result column="GCX_SFJ_CF" property="gcxSfjCf" jdbcType="INTEGER" />
+		<result column="GCX_RMFY_CF" property="gcxRmfyCf" jdbcType="INTEGER" />
+		<result column="GCX_TJJ_CF" property="gcxTjjCf" jdbcType="INTEGER" />
+		<result column="GCX_CQJ_CF" property="gcxCqjCf" jdbcType="INTEGER" />
+		<result column="GCX_JYJ_CF" property="gcxJyjCf" jdbcType="INTEGER" />
+		<result column="GCX_RMYH_CF" property="gcxRmyhCf" jdbcType="INTEGER" />
+		<result column="GCX_YJJ_CF" property="gcxYjjCf" jdbcType="INTEGER" />
+		<result column="GCX_LSJ_CF" property="gcxLsjCf" jdbcType="INTEGER" />
+		<result column="GCX_FZHGGJ_CF" property="gcxFzhggjCf" jdbcType="INTEGER" />
+		<result column="GCX_GHHTDGLJ_CF" property="gcxGhhtdgljCf" jdbcType="INTEGER" />
+		<result column="GCX_GWWSJDJ_CF" property="gcxGwwsjdjCf" jdbcType="INTEGER" />
+		<result column="GCX_WSJ_CF" property="gcxWsjCf" jdbcType="INTEGER" />
+		<result column="GCX_JYJYJ_CF" property="gcxJyjyjCf" jdbcType="INTEGER" />
+		<result column="GCX_YSJ_CF" property="gcxYsjCf" jdbcType="INTEGER" />
+		<result column="GCX_LYGLJ_CF" property="gcxLygljCf" jdbcType="INTEGER" />
+		<result column="GCX_LHJ_CF" property="gcxLhjCf" jdbcType="INTEGER" />
+		<result column="GCX_SANGWUJU_CF" property="gcxSangwujuCf" jdbcType="INTEGER" />
+		<result column="GCX_KYJTGL_CF" property="gcxKyjtglCf" jdbcType="INTEGER" />
+		<result column="GCX_TXGLJ_CF" property="gcxTxgljCf" jdbcType="INTEGER" />
+		<result column="GCX_GHJ_CF" property="gcxGhjCf" jdbcType="INTEGER" />
+		<result column="GCX_YZGLJ_CF" property="gcxYzgljCf" jdbcType="INTEGER" />
+		<result column="GCX_XXHJ_CF" property="gcxXxhjCf" jdbcType="INTEGER" />
+		<result column="GCX_WGXJ_CF" property="gcxWgxjCf" jdbcType="INTEGER" />
+		<result column="GCX_SLJ_CF" property="gcxSljCf" jdbcType="INTEGER" />
+		<result column="GCX_GSJ_CF" property="gcxGsjCf" jdbcType="INTEGER" />
+		<result column="GCX_CYJLZ_CF" property="gcxCyjlzCf" jdbcType="INTEGER" />
+		<result column="GCX_XF_CF" property="gcxXfCf" jdbcType="INTEGER" />
+		<result column="GCXAPP_ENVIRONMEN_PUNISHMENT" property="gcxappEnvironmenPunishment" jdbcType="INTEGER" />
+		<result column="GCX_A_TAXPAYER" property="gcxATaxpayer" jdbcType="INTEGER" />
+		<result column="GCX_TAX_LAW_CASES" property="gcxTaxLawCases" jdbcType="INTEGER" />
+		<result column="GCX_NEGATIVE_LIST" property="gcxNegativeList" jdbcType="INTEGER" />
+		<result column="GCXAPP_BANKCOMMITTEE_PUNISH" property="gcxappBankcommitteePunish" jdbcType="INTEGER" />
+		<result column="GCXAPP_STOCK_PUBLISH" property="gcxappStockPublish" jdbcType="INTEGER" />
+		<result column="GCXAPP_BAOJIANHUI_PUBLISH" property="gcxappBaojianhuiPublish" jdbcType="INTEGER" />
+		<result column="GCXAPP_DISHONEST_PEOPLE" property="gcxappDishonestPeople" jdbcType="INTEGER" />
+		<result column="GCXAPP_NETLOAN_BLACKLIST" property="gcxappNetloanBlacklist" jdbcType="INTEGER" />
+		<result column="GCXAPP_ZJB_DISHONEST" property="gcxappZjbDishonest" jdbcType="INTEGER" />
+		<result column="GCXAPP_ZJB_PERSON_DISHONEST" property="gcxappZjbPersonDishonest" jdbcType="INTEGER" />
+		<result column="GCXAPP_ZJB_QYGRBLXW" property="gcxappZjbQygrblxw" jdbcType="INTEGER" />
+		<result column="LVYOU_ZJ_COP_BLXX" property="lvyouZjCopBlxx" jdbcType="INTEGER" />
+		<result column="LVYOU_ZJ_PER_BLXX" property="lvyouZjPerBlxx" jdbcType="INTEGER" />
+		<result column="GCX_CORP_JYYC" property="gcxCorpJyyc" jdbcType="INTEGER" />
+		<result column="GCX_CORP_XZCF" property="gcxCorpXzcf" jdbcType="INTEGER" />
+		<result column="FROM_TABLE" property="fromTable" jdbcType="VARCHAR" />
+		<result column="INSERT_TIME" property="insertTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		PUNISH_MAN, 
+		AUTHORMAN, 
+		PROVINCE, 
+		TEL, 
+		EMAIL, 
+		ADRESS, 
+		ADD_TIME, 
+		GCX_JIAOTONG_CF, 
+		GCX_SWJ_CF, 
+		GCX_GAJ_CF, 
+		GCX_HBJ_CF, 
+		GCX_JHSY_CF, 
+		GCX_NYJ_CF, 
+		GCX_LYJ_CF, 
+		GCX_LINYEJU_CF, 
+		GCX_GSXZGLJ_CF, 
+		GCX_SJJ_CF, 
+		GCX_GTZYJ_CF, 
+		GCX_ZLJDJ_CF, 
+		GCX_SCJDGLJ_CF, 
+		GCX_SPYP_CF, 
+		GCX_CZJ_CF, 
+		GCX_DSJ_CF, 
+		GCX_WJJ_CF, 
+		GCX_ZFCXJSJ_CF, 
+		GCX_RLZYSHBZJ_CF, 
+		GCX_WHJ_CF, 
+		GCX_SCXZZF_CF, 
+		GCX_CBJ_CF, 
+		GCX_TYJ_CF, 
+		GCX_GDJ_CF, 
+		GCX_DSJCF_CF, 
+		GCX_YCZMJ_CF, 
+		GCX_XMJ_CF, 
+		GCX_BJJ_CF, 
+		GCX_HG_CF, 
+		GCX_CG_CF, 
+		GCX_MFJ_CF, 
+		GCX_QXJ_CF, 
+		GCX_AJJ_CF, 
+		GCX_MZJ_CF, 
+		GCX_SCJ_CF, 
+		GCX_SW_CF, 
+		GCX_YWJ_CF, 
+		GCX_HSJ_CF, 
+		GCX_JLZMGLJ_CF, 
+		GCX_YZGL_CF, 
+		GCX_SFJ_CF, 
+		GCX_RMFY_CF, 
+		GCX_TJJ_CF, 
+		GCX_CQJ_CF, 
+		GCX_JYJ_CF, 
+		GCX_RMYH_CF, 
+		GCX_YJJ_CF, 
+		GCX_LSJ_CF, 
+		GCX_FZHGGJ_CF, 
+		GCX_GHHTDGLJ_CF, 
+		GCX_GWWSJDJ_CF, 
+		GCX_WSJ_CF, 
+		GCX_JYJYJ_CF, 
+		GCX_YSJ_CF, 
+		GCX_LYGLJ_CF, 
+		GCX_LHJ_CF, 
+		GCX_SANGWUJU_CF, 
+		GCX_KYJTGL_CF, 
+		GCX_TXGLJ_CF, 
+		GCX_GHJ_CF, 
+		GCX_YZGLJ_CF, 
+		GCX_XXHJ_CF, 
+		GCX_WGXJ_CF, 
+		GCX_SLJ_CF, 
+		GCX_GSJ_CF, 
+		GCX_CYJLZ_CF, 
+		GCX_XF_CF, 
+		GCXAPP_ENVIRONMEN_PUNISHMENT, 
+		GCX_A_TAXPAYER, 
+		GCX_TAX_LAW_CASES, 
+		GCX_NEGATIVE_LIST, 
+		GCXAPP_BANKCOMMITTEE_PUNISH, 
+		GCXAPP_STOCK_PUBLISH, 
+		GCXAPP_BAOJIANHUI_PUBLISH, 
+		GCXAPP_DISHONEST_PEOPLE, 
+		GCXAPP_NETLOAN_BLACKLIST, 
+		GCXAPP_ZJB_DISHONEST, 
+		GCXAPP_ZJB_PERSON_DISHONEST, 
+		GCXAPP_ZJB_QYGRBLXW, 
+		LVYOU_ZJ_COP_BLXX, 
+		LVYOU_ZJ_PER_BLXX, 
+		GCX_CORP_JYYC, 
+		GCX_CORP_XZCF, 
+		FROM_TABLE, 
+		INSERT_TIME
+	</sql>
+
+	<sql id="Common_Where_List">
+		<if test='record.punishMan != null and record.punishMan != "" '> 
+		  and PUNISH_MAN = #{record.copyName,jdbcType=VARCHAR}
+        </if>
+	</sql>
+
+	<select id="findAllList" resultMap="BaseResultMap">
+		select
+		<include refid='Base_Column_List' />
+		from GCX_ALL_CORP_NEGATIVE_CF where DELETE_FLAG != 1
+		<include refid='Common_Where_List' />
+		ORDER BY TIME_ADD DESC
+        <if test="pageSize!=-1">
+            LIMIT #{firstResult,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER}
+        </if>
+	</select>
+	
+	<select id="findByRecordCount" resultType="int">
+		select count(1) from GCX_ALL_CORP_NEGATIVE_CF where DELETE_FLAG != 1
+		<include refid='Common_Where_List' />
+	</select>
+
+
+</mapper>

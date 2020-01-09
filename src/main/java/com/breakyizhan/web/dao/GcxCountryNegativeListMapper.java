@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public interface GcxCountryNegativeListMapper{
+public interface GcxCountryNegativeListMapper {
 
 
     List<GcxCountryNegativeList> findAllList(@Param("record") ResourceAllModel record, @Param("start") int limitStart, @Param("end") int limitEnd);

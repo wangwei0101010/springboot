@@ -20,10 +20,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
-
+ * @Author qimy
+ * @Date 2018/5/16 13:46
  **/
 @Service
-@ModelDescription(value="资源库",key="resourceAllController")
+@ModelDescription(value="国和信用资源库",key="resourceAllController")
 public class ResourceAllServiceImpl implements ResourceAllService {
 
 //    @Autowired

@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface GcxAllCorpNegativeCfMapper {
 
-	int findByRecordCount(@Param("record") ResourceAllModel record);
+
 
 
     List<GcxAllCorpNegativeCf> findAllList(ResourceAllModel record);

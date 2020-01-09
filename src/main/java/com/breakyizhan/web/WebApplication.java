@@ -1,22 +1,20 @@
 package com.breakyizhan.web;
 
-import com.breakyizhan.web.Controller.HelloController;
+import com.breakyizhan.web.common.dataSource.DynamicDataSourceRegister;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.Import;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication  // same as @Configuration @EnableAutoConfiguration @ComponentScan
-@RestController
+@EnableTransactionManagement
+@Import({DynamicDataSourceRegister.class})
+@MapperScan("com.breakyizhan.web.dao")
+@EnableScheduling
 public class WebApplication {
 
-    @RequestMapping("/")
-    String home(){
-        return "Hello World";
-    }
 
     public static void main(String[] args) {
         SpringApplication.run(WebApplication.class, args);
