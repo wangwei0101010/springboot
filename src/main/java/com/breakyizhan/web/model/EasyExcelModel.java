@@ -72,5 +72,14 @@ public class EasyExcelModel {
         this.birthday = birthday;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid='" + uid + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", birthday=" + birthday +
+                '}';
+    }
 
 }
