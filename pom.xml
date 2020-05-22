@@ -196,6 +196,51 @@
             <version>${junit.version}</version>
         </dependency>
 
+        <!--elasticsearch-->
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>7.6.2</version>
+        </dependency>
+
+        <!-- elasticsearch的客户端 后续弃用  一共4总方式TransportClient RestClient(这两个是es原生的), jest是社区维护的, Spring Data Elasticsearch(推荐使用)-->
+        <dependency>
+            <!--Rest Client分为Java Low REST Client和Java High Level REST Client-->
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-high-level-client</artifactId>
+            <version>7.6.2</version>
+        </dependency>
+        <dependency>
+            <!--Rest Client分为Java Low REST Client和Java High Level REST Client-->
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client</artifactId>
+            <version>7.6.2</version>
+        </dependency>
+   <!-- 不使用这种方式
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>transport</artifactId>
+            <version>7.6.2</version>
+        </dependency>-->
+        <!-- elasticsearch依赖2.x的log4j -->
+        <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-api</artifactId>
+        <version>2.8.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.8.2</version>
+        </dependency>
+
+        <!--注解方式生成get和set方法-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <build>
