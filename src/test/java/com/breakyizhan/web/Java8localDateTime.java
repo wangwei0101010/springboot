@@ -59,9 +59,17 @@ public class Java8localDateTime {
         Period period = now.toLocalDate().until(lastDayOfYear);
         System.out.println("Period Format= " + period);
 
-        //日期格式化
+        //日期格式化String
         String formatTime = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd mm:ss"));
         System.out.println(formatTime);
+
+        //String格式化日期格式
+        String str = "2017-11-21 14:41:06:612";
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS");
+        LocalDate dateStr = LocalDate.parse(str, fmt);
+        LocalDateTime time1 = LocalDateTime.parse(str, fmt);
+        System.out.println("date:"+dateStr);
+        System.out.println("time:"+time1);
 
         //日期转换
         //Date转换为新的API
