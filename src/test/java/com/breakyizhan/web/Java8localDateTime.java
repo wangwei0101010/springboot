@@ -50,6 +50,10 @@ public class Java8localDateTime {
         System.out.println("3 weeks before today will be " + now.minusWeeks(3));
         System.out.println("20 months before today will be " + now.minusMonths(20));
 
+        //获取月份数字
+        System.out.println("当前日期为：" + now.getDayOfMonth());
+        System.out.println("当前月份为：" + now.getMonthValue());
+
         //查询日期的特定点
         System.out.println("First date of this month= " + now.with(TemporalAdjusters.firstDayOfMonth()));
         LocalDate lastDayOfYear = now.toLocalDate().with(TemporalAdjusters.lastDayOfYear());
