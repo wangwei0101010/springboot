@@ -3,6 +3,7 @@ spring:
       name: master
       driver-class-name: com.mysql.jdbc.Driver
       url: jdbc:mysql://119.90.51.183:3306/gcx_dd?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      ## CREATE USER 'ww' IDENTIFIED BY '123456'; 如果root不能登录切换
       ##url: jdbc:mysql://119.90.51.176:3306/gcx_crawler_db?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: isoftadmin
