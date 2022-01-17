@@ -63,3 +63,4 @@ target/generated-test-sources/
 target/maven-archiver/
 target/maven-status/
 target/web-0.0.1-SNAPSHOT.jar.original
+!/pom.xml
