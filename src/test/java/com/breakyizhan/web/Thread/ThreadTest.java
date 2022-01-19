@@ -7,7 +7,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.breakyizhan.web;
+package com.breakyizhan.web.Thread;
 
 import com.breakyizhan.web.ModelTest.StreamUser;
 import org.junit.Test;

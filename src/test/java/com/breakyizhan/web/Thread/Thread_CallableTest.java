@@ -1,4 +1,4 @@
-package com.breakyizhan.web;
+package com.breakyizhan.web.Thread;
 
 
 import io.swagger.models.auth.In;
