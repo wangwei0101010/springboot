@@ -1,0 +1,10 @@
+POST http://localhost:8080/api/iotdevicemgt/iot-device/import?productId=121212
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data;name="file"  ;filename="exportDeviceTemplate.xlsx"
+Content-Type: application/octet-stream; charset=UTF-8
+
+< /Users/wangwei/Downloads/exportDeviceTemplate.xlsx
+--WebAppBoundary--
+
