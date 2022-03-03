@@ -47,16 +47,7 @@ public class regex {
 
   }
 
-//兼容JavaScript
-  @Test
-  public void cron() throws ScriptException {
-    String cron = "11.34  > 12";
-    ScriptEngineManager scriptEngineManager = new ScriptEngineManager();
-    ScriptEngine se = scriptEngineManager.getEngineByName("js");
-    boolean eval = (boolean) se.eval(cron);
-    System.err.println(eval);
 
-  }
 
   @Test
   public void replace() {
