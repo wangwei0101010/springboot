@@ -48,6 +48,8 @@ spring:
          max-idle: 8
          min-idle: 0
          max-wait: 10000
+   resources:
+      static-locations: classpath:webapp
 custom:
    datasource:
       names: ds1
