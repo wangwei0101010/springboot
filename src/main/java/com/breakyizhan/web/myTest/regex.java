@@ -69,4 +69,28 @@ public class regex {
 
 
   }
+
+//标准版替换
+  @Test
+  public void replace1() {
+    //替换产品和设备
+    String prod = "产品BBBB";
+    String dev = "设备bbbb";
+    String topic = "/sys/产品A/设备a/thing/sdf/event/sss";
+    String ssout = topic.replaceFirst("^/sys(/[^/]*)(/[^/]*)(/[^/]*)", "/sys/" +prod +"/" + dev +"$3"  );
+    System.err.println("111   "+ssout);
+
+
+
+
+  //网上搜索的
+    String url = "http://example.com:8080/files/username/oldpassword/12351.png";
+    //            http://example.com:8080/files/username/anyNewRandomPassword/312351.png
+    String newPass = "anyNewRandomPassword";
+    String out = url.replaceFirst("(.*/)(.*)(/[^/]*)", "$1" + newPass + "$3");
+    System.err.println(out);
+
+
+
+  }
 }
