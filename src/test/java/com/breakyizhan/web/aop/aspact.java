@@ -13,18 +13,18 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class aspact  {
 
-  @Before("execution(* com.breakyizhan.web.Controller.*(..))")
+  @Before("execution(* com.breakyizhan.web.*.*(..))")
   public void before(){
     System.err.println("前置通知");
   }
 
 
-  @After("execution(* com.breakyizhan.web.*.*.*(..))")
+  @After("execution(* com.breakyizhan.web.*.*(..))")
   public void after(){
     System.err.println("后置通知");
   }
 
-  @Around("execution(* com.breakyizhan.web.*.*.*(..))")
+  @Around("execution(* com.breakyizhan.web.*.*(..))")
   public void around(ProceedingJoinPoint pjp) throws Throwable {
     System.err.println("环绕前通知");
     Signature signature = pjp.getSignature();//获得签名
