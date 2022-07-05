@@ -7,7 +7,6 @@ import com.breakyizhan.web.dao.GcxCountryNegativeListMapper;
 import com.breakyizhan.web.model.DataClassificationCount;
 import com.breakyizhan.web.model.GcxCountryNegativeList;
 import com.breakyizhan.web.model.NewDataCategory;
-import com.breakyizhan.web.service.impl.ResourceAllServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -36,22 +35,16 @@ public class Scheduler {
             long startTime = System.currentTimeMillis();
             Map<String, Integer> countDate = gcxCountryNegativeListMapper.findCountDate();
             List<Map<String, Integer>> countByProvince = gcxCountryNegativeListMapper.findCountByProvince();
-            List<DataClassificationCount> countByType = gcxCountryNegativeListMapper.findCountByType(ResourceAllServiceImpl.paramMap);
-            List<NewDataCategory> topFiveData = gcxCountryNegativeListMapper.findTopFiveData(ResourceAllServiceImpl.paramMap);
             List<GcxCountryNegativeList> latestData = gcxCountryNegativeListMapper.findLatestData();
 
             String countDateJson = JSONObject.toJSON(countDate).toString();
             String countByProvinceJson = JSONObject.toJSON(countByProvince).toString();
-            String countByTypeJson = JSONObject.toJSON(countByType).toString();
-            String topFiveDataJson = JSONObject.toJSON(topFiveData).toString();
             String latestDataJson = JSONObject.toJSON(latestData).toString();
 
 
 
             userRedisUtils.setString(CommonValue.COUNTDATEJSON,countDateJson);
             userRedisUtils.setString(CommonValue.COUNTBYPROVINCEJSON,countByProvinceJson);
-            userRedisUtils.setString(CommonValue.COUNTBYTYPEJSON,countByTypeJson);
-            userRedisUtils.setString(CommonValue.TOPFIVEDATAJSON,topFiveDataJson);
             userRedisUtils.setString(CommonValue.LATESTDATAJSON,latestDataJson);
 
             long end = System.currentTimeMillis();

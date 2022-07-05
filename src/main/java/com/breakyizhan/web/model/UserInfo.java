@@ -9,7 +9,12 @@
  */
 package com.breakyizhan.web.model;
 
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.algorithms.Algorithm;
 import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -19,35 +24,14 @@ import java.util.Date;
  * @create 2020/1/6
  * @since 1.0.0
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserInfo {
     private long id;
     private String username;
     private String password;
+    private String token;
 
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
 }

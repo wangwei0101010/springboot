@@ -1,369 +1,387 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.9.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  <groupId>com.breakyizhan</groupId>
+  <artifactId>web</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>web</name>
+  <description>Demo project for Spring Boot</description>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <spring.version>5.0.2.RELEASE</spring.version>
+
+    <asciidoctor.input.directory>${project.basedir}/docs/asciidoc</asciidoctor.input.directory>
+    <generated.asciidoc.directory>${project.build.directory}/asciidoc</generated.asciidoc.directory>
+    <asciidoctor.html.output.directory>${project.build.directory}/asciidoc/html
+    </asciidoctor.html.output.directory>
+    <asciidoctor.pdf.output.directory>${project.build.directory}/asciidoc/pdf
+    </asciidoctor.pdf.output.directory>
+    <junit.version>4.12</junit.version>
+  </properties>
+
+  <dependencies>
+    <!-- Spring boot 核心web-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-tomcat</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+
+    <!--
+            查询后发现默认日志如果要打印生成文件需要添加application.properties，
+            而添加这个只可以打固定名称格式的日志，并不能灵活的配置，所以添加Springboot默认支持的logback作为标准日志输出-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-logging</artifactId>
+    </dependency>
+    <!--servlet-->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+    </dependency>
+
+    <!--常用库依赖-->
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.6</version>
+    </dependency>
+
+    <!--整合mybaties-->
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+    <!--整合mysql-->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.16</version>
+    </dependency>
+
+    <!-- swagger2 -->
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger2</artifactId>
+      <version>2.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-swagger-ui</artifactId>
+      <version>2.7.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.swagger2markup</groupId>
+      <artifactId>swagger2markup</artifactId>
+      <version>1.3.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!--swagger2-->
+
+    <!-- Redis 相关依赖 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+    </dependency>
+    <!--阿里 FastJson依赖-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.44</version>
+    </dependency>
+    <!-- json -->
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
+
+    <!-- druid数据源驱动 -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid-spring-boot-starter</artifactId>
+      <version>1.1.0</version>
+    </dependency>
+
+    <!--代码生成器依赖-->
+    <dependency>
+      <groupId>org.freemarker</groupId>
+      <artifactId>freemarker</artifactId>
+      <version>2.3.23</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis.generator</groupId>
+      <artifactId>mybatis-generator-core</artifactId>
+      <version>1.3.5</version>
+    </dependency>
+
+    <!-- 上传组件包 -->
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.3.3</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.4</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>1.8.10</version>
+    </dependency>
+
+    <!-- springBoot test类 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.junit.vintage</groupId>
+          <artifactId>junit-vintage-engine</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!--注 在运行一个完整的，打包过的应用时，开发者工具（devtools）会被自动禁用。如果应用使用java -jar或特殊的类加载器启动，
+    都会被认为是一个产品级的应用（production application），从而禁用开发者工具。为了防止devtools传递到项目中的其他模块，
+    设置该依赖级别为optional是个不错的实践。不过Gradle不支持optional依赖，所以你可能要了解下propdeps-plugin。
+    如果想确保devtools绝对不会包含在一个产品级构建中，你可以使用excludeDevtools构建属性彻底移除该JAR，
+    Maven和Gradle都支持该属性。-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <!--ali easyExcel导入导出-->
+    <!--   <dependency>
+           <groupId>com.alibaba</groupId>
+           <artifactId>easyexcel</artifactId>
+           <version>1.1.2-beta4</version>
+       </dependency>-->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>easyexcel</artifactId>
+      <version>2.2.10</version>
+    </dependency>
+
+
+    <!--junit测试-->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+    </dependency>
+
+    <!--elasticsearch-->
+    <dependency>
+      <groupId>org.elasticsearch</groupId>
+      <artifactId>elasticsearch</artifactId>
+      <version>7.13.3</version>
+    </dependency>
+
+    <!-- elasticsearch的客户端 后续弃用  一共4总方式TransportClient RestClient(这两个是es原生的), jest是社区维护的, Spring Data Elasticsearch(推荐使用)-->
+    <dependency>
+      <!--Rest Client分为Java Low REST Client和Java High Level REST Client-->
+      <groupId>org.elasticsearch.client</groupId>
+      <artifactId>elasticsearch-rest-high-level-client</artifactId>
+      <version>7.6.2</version>
+    </dependency>
+    <dependency>
+      <!--Rest Client分为Java Low REST Client和Java High Level REST Client-->
+      <groupId>org.elasticsearch.client</groupId>
+      <artifactId>elasticsearch-rest-client</artifactId>
+      <version>7.6.2</version>
+    </dependency>
+    <!-- 不使用这种方式
+         <dependency>
+             <groupId>org.elasticsearch.client</groupId>
+             <artifactId>transport</artifactId>
+             <version>7.6.2</version>
+         </dependency>-->
+    <!-- elasticsearch依赖2.x的log4j -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.8.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.8.2</version>
+    </dependency>
+
+    <!--使用java API操作zookeeper-->
+    <dependency>
+      <groupId>org.apache.zookeeper</groupId>
+      <artifactId>zookeeper</artifactId>
+      <version>3.4.14</version>
+    </dependency>
+
+    <!--注解方式生成get和set方法-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+
+
+    <dependency>
+      <groupId>cn.hutool</groupId>
+      <artifactId>hutool-all</artifactId>
+      <version>5.8.0.M3</version>
+    </dependency>
+    <!--mybatis-plus-->
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-annotation</artifactId>
+      <version>3.4.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-boot-starter</artifactId>
+      <version>3.4.2</version>
+    </dependency>
+
+
+
+    <!--JWT的集成-->
+    <dependency>
+      <groupId>com.auth0</groupId>
+      <artifactId>java-jwt</artifactId>
+      <version>3.4.0</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!--要创建可执行的jar，我们需要将spring-boot-maven-plugin添加到我们的pom.xml中。 在 dependencies标签 下方插入以下行-->
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.9.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-    <groupId>com.breakyizhan</groupId>
-    <artifactId>web</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>web</name>
-    <description>Demo project for Spring Boot</description>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+          <!-- spring热部署 -->
+          <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>springloaded</artifactId>
+            <version>1.2.6.RELEASE</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <!--编译jdk版本-->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <!--swagger2生成html文档-->
+      <plugin>
+        <groupId>io.github.swagger2markup</groupId>
+        <artifactId>swagger2markup-maven-plugin</artifactId>
+        <version>1.3.1</version>
+        <configuration>
+          <swaggerInput>http://localhost:8080/v2/api-docs</swaggerInput>
+          <outputDir>src/docs/asciidoc/generated</outputDir>
+          <config>
+            <swagger2markup.markupLanguage>ASCIIDOC</swagger2markup.markupLanguage>
+          </config>
+        </configuration>
+      </plugin>
 
-    <properties>
-        <java.version>1.8</java.version>
-        <spring.version>5.0.2.RELEASE</spring.version>
+      <plugin>
+        <groupId>org.asciidoctor</groupId>
+        <artifactId>asciidoctor-maven-plugin</artifactId>
+        <version>1.5.6</version>
+        <configuration>
+          <sourceDirectory>src/docs/asciidoc/generated</sourceDirectory>
+          <outputDirectory>src/docs/asciidoc/html</outputDirectory>
+          <backend>html</backend>
+          <sourceHighlighter>coderay</sourceHighlighter>
+          <attributes>
+            <toc>left</toc>
+          </attributes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.mybatis.generator</groupId>
+        <artifactId>mybatis-generator-maven-plugin</artifactId>
+        <version>1.3.2</version>
+        <configuration>
+          <verbose>true</verbose>
+          <overwrite>true</overwrite>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
-        <asciidoctor.input.directory>${project.basedir}/docs/asciidoc</asciidoctor.input.directory>
-        <generated.asciidoc.directory>${project.build.directory}/asciidoc</generated.asciidoc.directory>
-        <asciidoctor.html.output.directory>${project.build.directory}/asciidoc/html</asciidoctor.html.output.directory>
-        <asciidoctor.pdf.output.directory>${project.build.directory}/asciidoc/pdf</asciidoctor.pdf.output.directory>
-        <junit.version>4.12</junit.version>
-    </properties>
+  <repositories>
+    <repository>
+      <id>aliyun-repos</id>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>jcenter-releases</id>
+      <name>jcenter</name>
+      <url>http://jcenter.bintray.com</url>
+    </repository>
+  </repositories>
 
-    <dependencies>
-        <!-- Spring boot 核心web-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
-
-        <!--
-                查询后发现默认日志如果要打印生成文件需要添加application.properties，
-                而添加这个只可以打固定名称格式的日志，并不能灵活的配置，所以添加Springboot默认支持的logback作为标准日志输出-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
-        </dependency>
-        <!--servlet-->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-        </dependency>
-
-        <!--常用库依赖-->
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.6</version>
-        </dependency>
-
-        <!--整合mybaties-->
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-        <!--整合mysql-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.16</version>
-        </dependency>
-
-        <!-- swagger2 -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.7.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.7.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.swagger2markup</groupId>
-            <artifactId>swagger2markup</artifactId>
-            <version>1.3.1</version>
-            <scope>test</scope>
-        </dependency>
-        <!--swagger2-->
-
-        <!-- Redis 相关依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-        </dependency>
-        <!--阿里 FastJson依赖-->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.44</version>
-        </dependency>
-        <!-- json -->
-        <dependency>
-            <groupId>taglibs</groupId>
-            <artifactId>standard</artifactId>
-            <version>1.1.2</version>
-        </dependency>
-
-        <!-- druid数据源驱动 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.0</version>
-        </dependency>
-
-        <!--代码生成器依赖-->
-        <dependency>
-            <groupId>org.freemarker</groupId>
-            <artifactId>freemarker</artifactId>
-            <version>2.3.23</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis.generator</groupId>
-            <artifactId>mybatis-generator-core</artifactId>
-            <version>1.3.5</version>
-        </dependency>
-
-        <!-- 上传组件包 -->
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-            <version>1.3.3</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.4</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>1.8.10</version>
-        </dependency>
-
-        <!-- springBoot test类 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <!--注 在运行一个完整的，打包过的应用时，开发者工具（devtools）会被自动禁用。如果应用使用java -jar或特殊的类加载器启动，
-        都会被认为是一个产品级的应用（production application），从而禁用开发者工具。为了防止devtools传递到项目中的其他模块，
-        设置该依赖级别为optional是个不错的实践。不过Gradle不支持optional依赖，所以你可能要了解下propdeps-plugin。
-        如果想确保devtools绝对不会包含在一个产品级构建中，你可以使用excludeDevtools构建属性彻底移除该JAR，
-        Maven和Gradle都支持该属性。-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <!--ali easyExcel导入导出-->
-     <!--   <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>easyexcel</artifactId>
-            <version>1.1.2-beta4</version>
-        </dependency>-->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>easyexcel</artifactId>
-            <version>2.2.10</version>
-        </dependency>
-
-
-        <!--junit测试-->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-        </dependency>
-
-        <!--elasticsearch-->
-        <dependency>
-            <groupId>org.elasticsearch</groupId>
-            <artifactId>elasticsearch</artifactId>
-            <version>7.13.3</version>
-        </dependency>
-
-        <!-- elasticsearch的客户端 后续弃用  一共4总方式TransportClient RestClient(这两个是es原生的), jest是社区维护的, Spring Data Elasticsearch(推荐使用)-->
-        <dependency>
-            <!--Rest Client分为Java Low REST Client和Java High Level REST Client-->
-            <groupId>org.elasticsearch.client</groupId>
-            <artifactId>elasticsearch-rest-high-level-client</artifactId>
-            <version>7.6.2</version>
-        </dependency>
-        <dependency>
-            <!--Rest Client分为Java Low REST Client和Java High Level REST Client-->
-            <groupId>org.elasticsearch.client</groupId>
-            <artifactId>elasticsearch-rest-client</artifactId>
-            <version>7.6.2</version>
-        </dependency>
-   <!-- 不使用这种方式
-        <dependency>
-            <groupId>org.elasticsearch.client</groupId>
-            <artifactId>transport</artifactId>
-            <version>7.6.2</version>
-        </dependency>-->
-        <!-- elasticsearch依赖2.x的log4j -->
-        <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-api</artifactId>
-        <version>2.8.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.8.2</version>
-        </dependency>
-
-        <!--使用java API操作zookeeper-->
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>3.4.14</version>
-        </dependency>
-
-        <!--注解方式生成get和set方法-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
-
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-            <version>5.8.0.M3</version>
-        </dependency>
-      <dependency>
-        <groupId>com.baomidou</groupId>
-        <artifactId>mybatis-plus-annotation</artifactId>
-        <version>3.4.0</version>
-      </dependency>
-
-
-    </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <!--要创建可执行的jar，我们需要将spring-boot-maven-plugin添加到我们的pom.xml中。 在 dependencies标签 下方插入以下行-->
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <!-- spring热部署 -->
-                    <dependency>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>springloaded</artifactId>
-                        <version>1.2.6.RELEASE</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <!--编译jdk版本-->
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-            <!--swagger2生成html文档-->
-            <plugin>
-                <groupId>io.github.swagger2markup</groupId>
-                <artifactId>swagger2markup-maven-plugin</artifactId>
-                <version>1.3.1</version>
-                <configuration>
-                    <swaggerInput>http://localhost:8080/v2/api-docs</swaggerInput>
-                    <outputDir>src/docs/asciidoc/generated</outputDir>
-                    <config>
-                        <swagger2markup.markupLanguage>ASCIIDOC</swagger2markup.markupLanguage>
-                    </config>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.asciidoctor</groupId>
-                <artifactId>asciidoctor-maven-plugin</artifactId>
-                <version>1.5.6</version>
-                <configuration>
-                    <sourceDirectory>src/docs/asciidoc/generated</sourceDirectory>
-                    <outputDirectory>src/docs/asciidoc/html</outputDirectory>
-                    <backend>html</backend>
-                    <sourceHighlighter>coderay</sourceHighlighter>
-                    <attributes>
-                        <toc>left</toc>
-                    </attributes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.3.2</version>
-                <configuration>
-                    <verbose>true</verbose>
-                    <overwrite>true</overwrite>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
-    <repositories>
-        <repository>
-            <id>aliyun-repos</id>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>jcenter-releases</id>
-            <name>jcenter</name>
-            <url>http://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>aliyun-plugin</id>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>aliyun-plugin</id>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
 
 </project>

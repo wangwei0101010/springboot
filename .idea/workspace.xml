@@ -20,16 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ea9d39-2426-4f89-97c5-3b11be657884" name="Default Changelist" comment="java代码汇总调用JavaScript">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/common/config/filter/TimeFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/common/config/filter/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/common/config/interceptor/TimeInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/common/config/interceptor/CommonInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/common/util/TokenUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/dao/UserInfoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/service/impl/UserInfoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserInfoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/myTest/JavaScript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/breakyizhan/web/myTest/JavaScript.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/myTest/TestDaemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/breakyizhan/web/myTest/TestDaemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/myTest/regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/breakyizhan/web/myTest/regex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/myTest/syn/UnsafeBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/breakyizhan/web/myTest/syn/UnsafeBank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/myTest/syn/UnsafeBuyTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/breakyizhan/web/myTest/syn/UnsafeBuyTicket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/myTest/syn/UnsafeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/breakyizhan/web/myTest/syn/UnsafeList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/Controller/ResourceAllController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/Controller/ResourceAllController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/common/config/SpringMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/common/config/interceptor/SpringMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/common/config/interceptor/TimeInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/common/spring/CommonInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/common/spring/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/common/spring/Scheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/model/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/model/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/service/ResourceAllService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/service/UserInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/breakyizhan/web/service/impl/ResourceAllServiceImpl.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,13 +89,6 @@
         <option name="userSettingsFile" value="$PROJECT_DIR$/../../../sunbox/maven_reportry/conf/settings.xml" />
       </MavenGeneralSettings>
     </option>
-    <option name="disabledProfiles">
-      <list>
-        <option value="jdk-1.8" />
-        <option value="nexus" />
-        <option value="spring" />
-      </list>
-    </option>
   </component>
   <component name="MavenRunner">
     <option name="skipTests" value="true" />
@@ -114,7 +112,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577349978618" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mapper" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -130,20 +128,25 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.breakyizhan.web" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/test/java/com/breakyizhan/web/ModelTest/lambda" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.breakyizhan.web.dao" />
+      <recent name="com.breakyizhan.web.service.impl" />
+      <recent name="com.breakyizhan.web.service" />
+      <recent name="com.breakyizhan.web.common.config.interceptor" />
+      <recent name="com.breakyizhan.web.Thread" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/webapp" />
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
       <recent name="$PROJECT_DIR$/src/test/java/com/breakyizhan/web" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.breakyizhan.web" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.breakyizhan.web.Thread" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/test/java/com/breakyizhan/web/ModelTest/lambda" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -943,12 +946,12 @@
     </configuration>
     <list>
       <item itemvalue="Application.JavaScriptFunction" />
+      <item itemvalue="Application.HelloController" />
       <item itemvalue="JUnit.ExcelReadTest.test" />
       <item itemvalue="JUnit.JavaScriptFunction.script" />
-      <item itemvalue="Tomcat Server.Tomcat 7.0.59.346" />
-      <item itemvalue="Spring Boot.WebApplication" />
-      <item itemvalue="Application.HelloController" />
       <item itemvalue="JUnit.UserController.getUserById" />
+      <item itemvalue="Spring Boot.WebApplication" />
+      <item itemvalue="Tomcat Server.Tomcat 7.0.59.346" />
     </list>
     <recent_temporary>
       <list>
@@ -1231,66 +1234,29 @@
     <option name="LAST_COMMIT_MESSAGE" value="pom文件夹annotation" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="207" y="23" key="#Project_Structure" timestamp="1646896942589">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="207" y="23" key="#Project_Structure/0.23.1440.813@0.23.1440.813" timestamp="1646896942589" />
-    <state x="336" y="63" key="#WebApplication" timestamp="1644639159147">
+    <state x="770" y="216" key="#com.intellij.ide.util.MemberChooser" timestamp="1656664251320">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="336" y="63" key="#WebApplication/0.0.1440.900@0.0.1440.900" timestamp="1644639159147" />
-    <state x="184" y="124" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1646896953772">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1644639168861" />
-    <state x="184" y="124" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.813@0.23.1440.813" timestamp="1646896953772" />
-    <state x="443" y="238" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1646901848129">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="443" y="238" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.813@0.23.1440.813" timestamp="1646901848129" />
-    <state x="770" y="218" key="#com.intellij.ide.util.MemberChooser" timestamp="1650535199589">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="533" y="163" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1642583248426" />
+    <state x="770" y="216" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1656664251320" />
     <state x="770" y="218" key="#com.intellij.ide.util.MemberChooser/0.23.1440.813@0.23.1440.813" timestamp="1650535199589" />
-    <state x="457" y="246" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1642392252615">
+    <state x="269" y="374" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1656661884376">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="457" y="246" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.900@0.0.1440.900" timestamp="1642392252615" />
-    <state x="269" y="361" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1650962047210">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
+    <state x="269" y="374" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1440.900@0.0.1440.900" timestamp="1656661884376" />
     <state x="269" y="361" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.23.1440.813@0.23.1440.813" timestamp="1650962047210" />
-    <state x="489" y="305" width="461" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1646904833715">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="489" y="305" width="461" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.1440.813@0.23.1440.813" timestamp="1646904833715" />
     <state x="490" y="318" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1650962049192">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
     <state x="490" y="318" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.23.1440.813@0.23.1440.813" timestamp="1650962049192" />
-    <state x="0" y="0" width="454" height="900" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1642583591512">
+    <state x="458" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1656663493647">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="0" y="0" width="454" height="900" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1642583591512" />
-    <state x="458" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1650441688515">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
+    <state x="458" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1656663493647" />
     <state x="458" y="183" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.813@0.23.1440.813" timestamp="1650441688515" />
-    <state x="465" y="324" key="#com.intellij.ws.actions.HttpClientConvertFromCurlDialog" timestamp="1644646402206">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="465" y="324" key="#com.intellij.ws.actions.HttpClientConvertFromCurlDialog/0.0.1440.900@0.0.1440.900" timestamp="1644646402206" />
     <state x="297" y="23" width="846" height="813" key="CommitChangelistDialog2" timestamp="1650590143266">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1642585866966" />
     <state x="297" y="23" width="846" height="813" key="CommitChangelistDialog2/0.23.1440.813@0.23.1440.813" timestamp="1650590143266" />
-    <state width="558" height="466" key="DebuggerActiveHint" timestamp="1644651126918">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="558" height="466" key="DebuggerActiveHint/0.0.1440.900@0.0.1440.900" timestamp="1644651126918" />
-    <state width="423" height="466" key="DebuggerActiveHint/0.23.1440.813@0.23.1440.813" timestamp="1644639596789" />
     <state width="1398" height="219" key="GridCell.Tab.0.bottom" timestamp="1650961909497">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
@@ -1334,74 +1300,40 @@
     <state width="1398" height="276" key="GridCell.Tab.2.bottom" timestamp="1650780941692">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1398" height="353" key="GridCell.Tab.2.bottom/0.0.1440.900@0.0.1440.900" timestamp="1644803435036" />
     <state width="1398" height="276" key="GridCell.Tab.2.bottom/0.23.1440.813@0.23.1440.813" timestamp="1650780941692" />
     <state width="1398" height="276" key="GridCell.Tab.2.center" timestamp="1650780941691">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1398" height="353" key="GridCell.Tab.2.center/0.0.1440.900@0.0.1440.900" timestamp="1644803435034" />
     <state width="1398" height="276" key="GridCell.Tab.2.center/0.23.1440.813@0.23.1440.813" timestamp="1650780941691" />
     <state width="1398" height="276" key="GridCell.Tab.2.left" timestamp="1650780941690">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1398" height="353" key="GridCell.Tab.2.left/0.0.1440.900@0.0.1440.900" timestamp="1644803435033" />
     <state width="1398" height="276" key="GridCell.Tab.2.left/0.23.1440.813@0.23.1440.813" timestamp="1650780941690" />
     <state width="1398" height="276" key="GridCell.Tab.2.right" timestamp="1650780941691">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1398" height="353" key="GridCell.Tab.2.right/0.0.1440.900@0.0.1440.900" timestamp="1644803435035" />
     <state width="1398" height="276" key="GridCell.Tab.2.right/0.23.1440.813@0.23.1440.813" timestamp="1650780941691" />
-    <state width="958" height="328" key="GridCell.Tab.3.bottom" timestamp="1647230486869">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state width="958" height="328" key="GridCell.Tab.3.bottom/0.23.1440.813@0.23.1440.813" timestamp="1647230486869" />
-    <state width="958" height="328" key="GridCell.Tab.3.center" timestamp="1647230486869">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state width="958" height="328" key="GridCell.Tab.3.center/0.23.1440.813@0.23.1440.813" timestamp="1647230486869" />
-    <state width="958" height="328" key="GridCell.Tab.3.left" timestamp="1647230486868">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state width="958" height="328" key="GridCell.Tab.3.left/0.23.1440.813@0.23.1440.813" timestamp="1647230486868" />
-    <state width="958" height="328" key="GridCell.Tab.3.right" timestamp="1647230486869">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state width="958" height="328" key="GridCell.Tab.3.right/0.23.1440.813@0.23.1440.813" timestamp="1647230486869" />
-    <state x="258" y="91" key="Maven.ArtifactSearchDialog" timestamp="1650519952813">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="258" y="91" key="Maven.ArtifactSearchDialog/0.23.1440.813@0.23.1440.813" timestamp="1650519952813" />
-    <state x="508" y="262" key="RestClientTextRequest" timestamp="1644650187086">
+    <state x="258" y="75" key="Maven.ArtifactSearchDialog" timestamp="1656663186998">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="508" y="262" key="RestClientTextRequest/0.0.1440.900@0.0.1440.900" timestamp="1644650187086" />
+    <state x="258" y="75" key="Maven.ArtifactSearchDialog/0.0.1440.900@0.0.1440.900" timestamp="1656663186998" />
+    <state x="258" y="91" key="Maven.ArtifactSearchDialog/0.23.1440.813@0.23.1440.813" timestamp="1650519952813" />
     <state x="485" y="167" key="RollbackChangesDialog" timestamp="1650961913221">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state x="485" y="159" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1644587671582" />
     <state x="485" y="167" key="RollbackChangesDialog/0.23.1440.813@0.23.1440.813" timestamp="1650961913221" />
-    <state x="221" y="23" key="SettingsEditor" timestamp="1646896735458">
-      <screen x="0" y="23" width="1440" height="813" />
-    </state>
-    <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1642582522982" />
-    <state x="221" y="23" key="SettingsEditor/0.23.1440.813@0.23.1440.813" timestamp="1646896735458" />
     <state x="320" y="195" key="Vcs.Push.Dialog.v2" timestamp="1650590144557">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1642585868699" />
     <state x="320" y="195" key="Vcs.Push.Dialog.v2/0.23.1440.813@0.23.1440.813" timestamp="1650590144557" />
-    <state width="720" height="450" key="XDebugger.FullValuePopup" timestamp="1644650737641">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="720" height="450" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1644650737641" />
     <state x="508" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1650246296052">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
     <state x="508" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.813@0.23.1440.813" timestamp="1650246296052" />
-    <state x="506" y="285" width="604" height="550" key="find.popup" timestamp="1650535403183">
-      <screen x="0" y="23" width="1440" height="813" />
+    <state x="418" y="205" width="686" height="550" key="find.popup" timestamp="1656899605986">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="418" y="205" width="686" height="550" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1649321398972" />
+    <state x="418" y="205" width="686" height="550" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1656899605986" />
     <state x="506" y="285" width="604" height="550" key="find.popup/0.23.1440.813@0.23.1440.813" timestamp="1650535403183" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1649238723794">
       <screen x="0" y="0" width="1440" height="900" />
