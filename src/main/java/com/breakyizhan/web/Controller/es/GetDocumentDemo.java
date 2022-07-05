@@ -9,8 +9,10 @@
  */
 package com.breakyizhan.web.Controller.es;
 import com.breakyizhan.web.common.util.EsInitClient;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import lombok.extern.slf4j.Slf4j;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.elasticsearch.ElasticsearchException;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
@@ -29,8 +31,8 @@ import java.util.Map;
  * @create 2020/5/21
  * @since 1.0.0
  */
+@Slf4j
 public class GetDocumentDemo {
-    private static Logger logger = LogManager.getRootLogger();
 
     public static void main(String[] args) {
         try (RestHighLevelClient client = EsInitClient.getClient()) {
@@ -65,12 +67,12 @@ public class GetDocumentDemo {
                 getResponse = client.get(request, RequestOptions.DEFAULT);
             } catch (ElasticsearchException e) {
                 if (e.status() == RestStatus.NOT_FOUND) {
-                    logger.error("没有找到该id的文档" );
+                    log.error("没有找到该id的文档" );
                 }
                 if (e.status() == RestStatus.CONFLICT) {
-                    logger.error("获取时版本冲突了，请在此写冲突处理逻辑！" );
+                    log.error("获取时版本冲突了，请在此写冲突处理逻辑！" );
                 }
-                logger.error("获取文档异常", e);
+                log.error("获取文档异常", e);
             }
 
             //4、处理响应
@@ -84,11 +86,11 @@ public class GetDocumentDemo {
                     Map<String, Object> sourceAsMap = getResponse.getSourceAsMap();  // 结果取成Map
                     byte[] sourceAsBytes = getResponse.getSourceAsBytes();    //结果取成字节数组
 
-                    logger.info("index:" + index + "  type:" + type + "  id:" + id);
-                    logger.info(sourceAsString);
+                    log.info("index:" + index + "  type:" + type + "  id:" + id);
+                    log.info(sourceAsString);
 
                 } else {
-                    logger.error("没有找到该id的文档" );
+                    log.error("没有找到该id的文档" );
                 }
             }
 

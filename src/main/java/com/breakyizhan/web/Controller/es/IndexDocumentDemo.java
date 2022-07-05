@@ -9,8 +9,8 @@
  */
 package com.breakyizhan.web.Controller.es;
 import com.breakyizhan.web.common.util.EsInitClient;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
+
 import org.elasticsearch.ElasticsearchException;
 import org.elasticsearch.action.DocWriteResponse;
 import org.elasticsearch.action.index.IndexRequest;
@@ -28,9 +28,8 @@ import org.elasticsearch.rest.RestStatus;
  * @create 2020/5/21
  * @since 1.0.0
  */
+@Slf4j
 public class IndexDocumentDemo {
-    private static Logger logger = LogManager.getRootLogger();
-
 
     public static  void main(String args[]){
         try(RestHighLevelClient client = EsInitClient.getClient()){
@@ -96,10 +95,10 @@ public class IndexDocumentDemo {
                 // 捕获，并处理异常
                 //判断是否版本冲突、create但文档已存在冲突
                 if (e.status() == RestStatus.CONFLICT) {
-                    logger.error("冲突了，请在此写冲突处理逻辑！\n" + e.getDetailedMessage());
+                    log.error("冲突了，请在此写冲突处理逻辑！\n" + e.getDetailedMessage());
                 }
 
-                logger.error("索引异常", e);
+                log.error("索引异常", e);
             }
 
             //5、处理响应
