@@ -108,7 +108,6 @@
       </exclusions>
     </dependency>
     <!--swagger2-->
-
     <!-- Redis 相关依赖 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -167,7 +166,6 @@
       <artifactId>aspectjweaver</artifactId>
       <version>1.8.10</version>
     </dependency>
-
     <!-- springBoot test类 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -180,7 +178,6 @@
         </exclusion>
       </exclusions>
     </dependency>
-
     <!--注 在运行一个完整的，打包过的应用时，开发者工具（devtools）会被自动禁用。如果应用使用java -jar或特殊的类加载器启动，
     都会被认为是一个产品级的应用（production application），从而禁用开发者工具。为了防止devtools传递到项目中的其他模块，
     设置该依赖级别为optional是个不错的实践。不过Gradle不支持optional依赖，所以你可能要了解下propdeps-plugin。
@@ -191,7 +188,6 @@
       <artifactId>spring-boot-devtools</artifactId>
       <optional>true</optional>
     </dependency>
-
     <!--ali easyExcel导入导出-->
     <!--   <dependency>
            <groupId>com.alibaba</groupId>
@@ -203,22 +199,18 @@
       <artifactId>easyexcel</artifactId>
       <version>2.2.10</version>
     </dependency>
-
-
     <!--junit测试-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
     </dependency>
-
     <!--elasticsearch-->
     <dependency>
       <groupId>org.elasticsearch</groupId>
       <artifactId>elasticsearch</artifactId>
       <version>7.13.3</version>
     </dependency>
-
     <!-- elasticsearch的客户端 后续弃用  一共4总方式TransportClient RestClient(这两个是es原生的), jest是社区维护的, Spring Data Elasticsearch(推荐使用)-->
     <dependency>
       <!--Rest Client分为Java Low REST Client和Java High Level REST Client-->
@@ -239,7 +231,6 @@
              <version>7.6.2</version>
          </dependency>-->
     <!-- elasticsearch依赖2.x的log4j -->
-
     <!--使用java API操作zookeeper-->
     <dependency>
       <groupId>org.apache.zookeeper</groupId>
@@ -252,14 +243,11 @@
         </exclusion>
       </exclusions>
     </dependency>
-
     <!--注解方式生成get和set方法-->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
     </dependency>
-
-
     <dependency>
       <groupId>cn.hutool</groupId>
       <artifactId>hutool-all</artifactId>
@@ -277,16 +265,17 @@
       <artifactId>mybatis-plus-boot-starter</artifactId>
       <version>3.4.2</version>
     </dependency>
-
-
-
     <!--JWT的集成-->
     <dependency>
       <groupId>com.auth0</groupId>
       <artifactId>java-jwt</artifactId>
       <version>3.4.0</version>
     </dependency>
-
+    <!--sucurity-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
