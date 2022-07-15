@@ -1,6 +1,5 @@
 package com.breakyizhan.web;
 
-import com.breakyizhan.web.common.dataSource.DynamicDataSourceRegister;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,7 +9,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication  // same as @Configuration @EnableAutoConfiguration @ComponentScan
 @EnableTransactionManagement
-@Import({DynamicDataSourceRegister.class})
 @MapperScan("com.breakyizhan.web.dao")
 @EnableScheduling
 public class WebApplication {
