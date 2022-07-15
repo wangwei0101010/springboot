@@ -7,10 +7,8 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.breakyizhan.web.model;
+package com.breakyizhan.web.entity;
 
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
 /**
