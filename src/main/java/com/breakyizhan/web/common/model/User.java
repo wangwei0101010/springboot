@@ -1,11 +1,9 @@
 package com.breakyizhan.web.common.model;
 
-import com.breakyizhan.web.common.base.BaseEntity;
-
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class User extends BaseEntity {
+public class User  {
     private BigDecimal userId;//用户编号
 
     private String userName;//用户名(融云的Userid)
