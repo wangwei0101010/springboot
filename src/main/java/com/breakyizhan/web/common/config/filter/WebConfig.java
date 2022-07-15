@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class WebConfig {
 
-  @Bean
+  //@Bean
   public FilterRegistrationBean timeFilter() {
     FilterRegistrationBean bean = new FilterRegistrationBean();
     bean.setFilter(new TimeFilter());
