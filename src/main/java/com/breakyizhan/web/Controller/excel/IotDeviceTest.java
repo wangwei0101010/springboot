@@ -1,7 +1,7 @@
 package com.breakyizhan.web.Controller.excel;
 
 import com.alibaba.excel.EasyExcel;
-import com.breakyizhan.web.model.IotDevice;
+import com.breakyizhan.web.entity.IotDevice;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,7 +9,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +20,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/api/iotdevicemgt/iot-device")
-public class IotDeviceController {
+public class IotDeviceTest {
 
 
   @PostMapping("/import")

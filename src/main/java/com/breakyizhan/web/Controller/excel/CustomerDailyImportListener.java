@@ -5,7 +5,7 @@ import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import com.alibaba.excel.exception.ExcelDataConvertException;
 import com.alibaba.excel.util.StringUtils;
-import com.breakyizhan.web.model.IotDevice;
+import com.breakyizhan.web.entity.IotDevice;
 import com.google.common.collect.Lists;
 import java.util.List;
 
