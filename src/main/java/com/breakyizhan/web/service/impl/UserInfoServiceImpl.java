@@ -4,7 +4,7 @@ package com.breakyizhan.web.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.breakyizhan.web.common.util.TokenUtils;
 import com.breakyizhan.web.dao.UserInfoMapper;
-import com.breakyizhan.web.model.UserInfo;
+import com.breakyizhan.web.entity.UserInfo;
 import com.breakyizhan.web.service.UserInfoService;
 import org.springframework.stereotype.Service;
 
