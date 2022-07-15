@@ -1,12 +1,12 @@
 spring:
    datasource:
       name: master
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://172.16.2.139:3306/test4?characterEncoding=UTF-8&serverTimezone=GMT%2B8
-      ## CREATE USER 'ww' IDENTIFIED BY '123456'; 如果root不能登录切换
-      ##url: jdbc:mysql://119.90.51.176:3306/gcx_crawler_db?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+#      driver-class-name: com.mysql.jdbc.Driver  mysql8中过时了
+      driver-class-name: com.mysql.cj.jdbc.Driver
+#    mysql8.0版本要加时区  serverTimezone=UTC
+      url: jdbc:mysql://47.92.155.150:12306/sunboxiot?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
       username: root
-      password: 123
+      password: PFxcd123$%^
       initialSize: 1
       minIdle: 3
       maxActive: 20
@@ -40,9 +40,9 @@ spring:
          login-username: druid
          login-password: druid123
    redis:
-      host: 119.90.51.183
+      host: 139.224.74.177
       port: 6379
-      password: gcxredis
+      password: I][3^QzL8Dl)[7f
       pool:
          max-active: 8
          max-idle: 8
@@ -50,22 +50,31 @@ spring:
          max-wait: 10000
    resources:
       static-locations: classpath:webapp
-custom:
-   datasource:
-      names: ds1
-      ds1:
-         driver-class-name: com.mysql.jdbc.Driver
-         url: jdbc:mysql://119.90.51.183:3306/gcx_dd?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-         username: root
-         password: isoftadmin
-mybatis:
-   #config-location: classpath:config/mybatis-config.xml
-   # type-aliases扫描路径
-   type-aliases-package: com.breakeyizhan.web.model
-   # mapper xml实现扫描路径
-   mapper-locations: classpath:mapper/*.xml
-   property:
-      order: BEFORE
+   main:
+      allow-bean-definition-overriding: true
+
+mybatis-plus:
+   # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+   mapper-locations: classpath:/mapper/*.xml
+#   type-aliases-package: com.breakeyizhan.web.model
+   # 以下配置均有默认值,可以不设置
+   global-config:
+      db-config:
+         # 主键类型,大小写不敏感 AUTO:"数据库ID自增", INPUT:"用户输入ID", ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID"
+         id-type: auto
+         # 字段策略 IGNORED:"忽略判断"  NOT_NULL:"非 NULL 判断")  NOT_EMPTY:"非空判断"
+         field-strategy: not_empty
+         #数据库类型, 大小写不敏感
+         db-type: mysql
+   configuration:
+      # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+      map-underscore-to-camel-case: true
+      # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+      call-setters-on-nulls: false
+      # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用####
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
 server:
    port: 8080
    contextPath: /
