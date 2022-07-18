@@ -279,11 +279,33 @@
     </dependency>
 
     <!--shiro-->
-    <!--  <dependency>
+    <!-- 不能引用hiro-spring-boot-starter,会出现下边的循环依赖问题!!!!!!!
+   Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   objectMapperConfigurer defined in class path resource [springfox/documentation/spring/web/SpringfoxWebMvcConfiguration.class]
+      ↓
+   org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration
+      ↓
+   authorizationAttributeSourceAdvisor defined in class path resource [org/apache/shiro/spring/boot/autoconfigure/ShiroAnnotationProcessorAutoConfiguration.class]
+┌─────┐
+|  securityManager defined in class path resource [com/breakyizhan/web/common/config/shiro/ShiroConfig.class]
+↑     ↓
+|  getShiroFilterFactoryBean defined in class path resource [com/breakyizhan/web/common/config/shiro/ShiroConfig.class]
+└─────┘
+    -->
+ <!--     <dependency>
         <groupId>org.apache.shiro</groupId>
         <artifactId>shiro-spring-boot-starter</artifactId>
-        <version>1.5</version>
+        <version>1.4.1</version>
       </dependency>-->
+    <dependency>
+      <groupId>org.apache.shiro</groupId>
+      <artifactId>shiro-spring</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
 
     <!--thymeleaf模板-->
     <dependency>

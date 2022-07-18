@@ -31,15 +31,15 @@ public class SpringMvcConfig implements WebMvcConfigurer {
     };
     //excludePathPatterns排除的路径
     String[] excludePathPatterns = {
-        "/user/login", "/user/noLg", "/user/error", "/userAuth/orgAuthLink"
-        , "/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**", "/notify/**",
+       // "/user/login", "/user/noLg", "/user/error", "/userAuth/orgAuthLink",
+         "/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**", "/notify/**",
         "/test", "/web/approve/callBack*"
     };
 
     InterceptorRegistration registration = registry
         .addInterceptor(getCommonInterceptor());//  //让spring管理,CommonInterceptor里面才能使用@Autowired
-    registration.addPathPatterns(addPathPatterns);
-    registration.excludePathPatterns(excludePathPatterns);
+  //  registration.addPathPatterns(addPathPatterns);
+  //  registration.excludePathPatterns(excludePathPatterns);
   }
 
 

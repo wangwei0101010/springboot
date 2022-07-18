@@ -50,8 +50,9 @@ spring:
          max-wait: 10000
    resources:
       static-locations: classpath:webapp
-   main:
-      allow-bean-definition-overriding: true
+#      出现相同bean名称启动报错,可以临时覆盖解决,最好找到问题,相同bean需要改名称
+#   main:
+#      allow-bean-definition-overriding: true
 
 mybatis-plus:
    # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
