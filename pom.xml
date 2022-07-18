@@ -306,23 +306,18 @@ The dependencies of some of the beans in the application context form a cycle:
       <version>1.7.0</version>
     </dependency>
 
-
     <!--thymeleaf模板-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
-
     </dependency>
 
-
-    <!-- sqlserver-->
-<!--
+    <!-- flyway -->
     <dependency>
-      <groupId>com.microsoft.sqlserver</groupId>
-      <artifactId>mssql-jdbc</artifactId>
-      <version>7.4.1.jre8</version>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-core</artifactId>
     </dependency>
--->
+
 
   </dependencies>
 
