@@ -1,1 +1,2 @@
 templates下的内容只能通过controller访问
+并且需要引入templates模板引擎,如thymeleaf引擎才能访问到,否则404错误
