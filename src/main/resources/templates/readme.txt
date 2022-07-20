@@ -1,0 +1,1 @@
+templates下的内容只能通过controller访问
