@@ -63,6 +63,9 @@ spring:
       locations: classpath:db/migration/mysql
    thymeleaf:
       cache: false
+   #国际化消息,首页登录切换语言
+   messages:
+      basename: i18n.login
 mybatis-plus:
    # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
    mapper-locations: classpath:/mapper/*.xml
