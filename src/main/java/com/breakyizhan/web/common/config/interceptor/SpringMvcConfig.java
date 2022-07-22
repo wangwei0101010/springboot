@@ -43,12 +43,4 @@ public class SpringMvcConfig implements WebMvcConfigurer {
   //  registration.addPathPatterns(addPathPatterns);
   //  registration.excludePathPatterns(excludePathPatterns);
   }
-
-
-  //添加资源位置,解决css 404报错
-  @Override
-  public void addResourceHandlers(ResourceHandlerRegistry registry) {
-    registry.addResourceHandler("/**").addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX+"/templates/");
-    registry.addResourceHandler("/**").addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX+"/static/");
-  }
 }
