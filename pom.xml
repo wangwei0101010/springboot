@@ -303,7 +303,7 @@ The dependencies of some of the beans in the application context form a cycle:
     <dependency>
       <groupId>org.apache.shiro</groupId>
       <artifactId>shiro-spring</artifactId>
-      <version>1.7.0</version>
+      <version>1.7.1</version>
     </dependency>
 
     <!--thymeleaf模板-->
