@@ -7,30 +7,31 @@ spring:
       url: jdbc:mysql://47.92.155.150:12306/sunboxiot?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
       username: root
       password: PFxcd123$%^
-      initialSize: 1
-      minIdle: 3
-      maxActive: 20
-      maxWait: 60000
-      timeBetweenEvictionRunsMillis: 60000
-      minEvictableIdleTimeMillis: 30000
-      validationQuery: select 'x'
-      testWhileIdle: true
-      testOnReturn: false
-      poolPreparedStatements: true
-      maxPoolPreparedStatementPerConnectionSize: 20
-      filters: stat,wall,slf4j
-      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-      useGlobalDataSourceStat: true
+      ##druid
+      druid:
+       initialSize: 1
+       minIdle: 3
+       maxActive: 20
+       maxWait: 60000
+       timeBetweenEvictionRunsMillis: 60000
+       minEvictableIdleTimeMillis: 30000
+       validationQuery: select 'x'
+       testWhileIdle: true
+       testOnReturn: false
+       poolPreparedStatements: true
+       maxPoolPreparedStatementPerConnectionSize: 20
+       filters: stat,wall,slf4j
+       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+       useGlobalDataSourceStat: true
       # WebStatFilter配置
-      web-stat-filter:
+       web-stat-filter:
          enabled: true
          # 添加过滤规则
          url-pattern: /*
          # 忽略过滤的格式
          exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
-
       # StatViewServlet配置
-      stat-view-servlet:
+       stat-view-servlet:
          enabled: true
          # 访问路径为/druid时，跳转到StatViewServlet
          url-pattern: /druid/*
