@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.core.toolkit.Constants;
 import com.breakyizhan.web.dto.IotDeviceResVo;
 import com.breakyizhan.web.entity.IotDevice;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 /**
  * <p>
@@ -16,6 +17,7 @@ import org.apache.ibatis.annotations.Param;
  * @author WangWei
  * @since 2022-02-10
  */
+@Repository
 public interface IotDeviceMapper extends BaseMapper<IotDevice> {
 
 
