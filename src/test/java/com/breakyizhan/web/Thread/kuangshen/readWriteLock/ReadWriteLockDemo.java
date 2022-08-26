@@ -15,6 +15,8 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  *2. 读和写 不共存
  *3. 写和写 不共存
  *
+ * hashmap线程不安全是建立在作为成员变量多并发操作且无同步处理的情况下，在方法中作为局部变量是没有并发问题的
+ *
  */
 public class ReadWriteLockDemo {
 
