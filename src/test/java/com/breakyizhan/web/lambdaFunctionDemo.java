@@ -22,7 +22,7 @@ import org.junit.Test;
  *4.断言型接口，判断T类型的参数是否满足条件。 public interface Predicate<T>
  *
  * */
-public class lambdaDemo01 {
+public class lambdaFunctionDemo {
 
   //消费型接口测试
   @Test
